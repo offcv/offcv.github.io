@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>电商前后端类目分离设计 | OFFCV</title>
+<meta name="description" content="遇见美好">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="shortcut icon" href="https://www.offcv.com/favicon.ico">
+<link rel="stylesheet" href="https://www.offcv.com/styles/main.css">
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://www.offcv.com">
+        <img src="https://www.offcv.com/images/avatar.png" class="site-logo">
+        <h1 class="site-title">OFFCV</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="/" class="site-nav">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="site-nav">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="site-nav">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="site-nav">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="site-description">
+      遇见美好
+    </div>
+    <div class="site-footer">
+      感谢 Hve Notes
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">电商前后端类目分离设计</h2>
+            <div class="post-date">2018-10-16</div>
+            
+            <div class="post-content">
+              <p>前端商品分类设计和后台商品分类一致？</p>
+<!-- more -->
+<p>类目，即商品分类树，如下图所示，即为前端分类树。<br><img src="https://www.offcv.com/post-images/1551494064594.png" alt=""></p>
+<p>天猫PC端分类树<br>第一次设计电商前后端的产品经理，在参考主流电商分类时，都会发现商品分类并不是严格按照商品的属性去呈现，而是带有强烈的运营属性。对，没错，前端的分类是强运营属性的产品设计思路。那后端类目是否应该与前端使用同一套呢？答案是前后端类目分离设计。</p>
+<p>我们首先思考一下，前后端类目的使用人群是谁，他们的使用场景是什么，他们使用这个功能要实现什么价值。</p>
+<p>前端类目</p>
+<p>使用人群：消费者</p>
+<p>使用场景：想找商场同款衣服；想找吃鸡不卡的手机；……</p>
+<p>实现价值：快速找到自己心目中的商品。</p>
+<p>后端类目</p>
+<p>使用人群：商家或者供应链人员</p>
+<p>使用场景：商品发布，仓库库存管理。</p>
+<p>实现价值：快速发布商品，仓库库位区分管理等。</p>
+<p>通过对比前后端类目，很容易就发现前后端类目有着完全不一样的设计方向。</p>
+<p>后端类目。后端类目的人群主要是商家，主要用于商品管理，有以下设计要求：</p>
+<ol>
+<li><p>后端类目相对固定，不宜经常修改或者删除。有商品时，更不能删除。</p>
+</li>
+<li><p>后端类目在四层之内，过多层级分类反而会造成管理上的不便。</p>
+</li>
+<li><p>赠品放在其他-赠品类目下，可以避免消费者误解。</p>
+</li>
+<li><p>当商品较多时，商品属性、销售属性等与基础类目进行关联，在商品发布时会更简单快捷。</p>
+</li>
+</ol>
+<p>前端类目。前端类目主要用户为消费者，目的是方便消费者找到商品。</p>
+<ol>
+<li><p>不同平台有不同的类目。这是不同渠道用户群差异造成的，如果差异很小，可以一致。</p>
+</li>
+<li><p>对于B2B2C的电商，需要提供买家自定义类目的功能。</p>
+</li>
+<li><p>前端类目可以支持对应后端某子类目和某些属性的组合，如手机这个子类目与8GB内存属性这样的组合，前端显示为畅快吃鸡手机分类。</p>
+</li>
+</ol>
+
+            </div>
+            
+              <div class="tag-container">
+                
+                  <a href="https://www.offcv.com/tag/xn1yM7VIM" class="tag">
+                    产品经理
+                  </a>
+                
+              </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://www.offcv.com/post/oo0uT5eoE">
+                  <h3 class="post-title">
+                    读书摘抄 人工智能产品经理（五）
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+<script type="application/javascript">
+
+AOS.init();
+
+hljs.initHighlightingOnLoad()
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+
+  </body>
+</html>
